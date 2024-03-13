@@ -1,0 +1,45 @@
+.scroll-indicator {
+  height: calc(5 * 1.5rem);
+  box-shadow: 2px 2px rgba(229, 229, 229, 1), inset 2px 2px white;
+  right: calc(2rem + 4px);
+  @apply bg-gray-800 w-6 hidden lg:flex flex-col justify-evenly items-center fixed top-1/2 rounded-sm border border-gray-100 z-50;
+}
+
+.scroll-indicator a::before {
+  content: attr(aria-label);
+  position: absolute;
+  right: 2rem;
+  background-color: white;
+  opacity: 0;
+  transition: all 500ms ease;
+  transform: translateX(0);
+  font-size: 0.875rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid var(--gray-800);
+  box-shadow: 2px 2px var(--gray-100);
+  margin-top: -4px;
+  color: gray;
+}
+
+.scroll-indicator a:hover::before {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.scroll-indicator a {
+  box-shadow: 2px 2px rgba(229, 229, 229, 1), inset 2px 2px white;
+  @apply w-4 h-4 bg-gray-800 rounded-full border border-gray-100;
+}
+
+.scroll-indicator .active {
+  background-color: var(--blue-300);
+  border: 1px solid var(--blue-100);
+  box-shadow: 2px 2px var(--blue-100), inset 2px 2px var(--blue-600);
+}
+
+.scroll-indicator .active:hover::before {
+  border: 1px solid var(--blue-300);
+  box-shadow: 2px 2px var(--blue-100);
+  color: var(--blue-100);
+}

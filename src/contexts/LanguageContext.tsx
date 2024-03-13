@@ -26,13 +26,13 @@ export const useLanguage = () => {
 export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
   const [lang, setLang] = useState<string>("en");
 
-  // GET LANG FROM LOCAL STORAGE
+  // get lang from local storage
   const getLang = () => {
     const savedLang = localStorage.getItem("lang");
     savedLang && setLang(savedLang);
   };
 
-  // STORE LANG IN LOCAL STORAGE
+  // store lang ib local storage
   const storeLang = async (lang: string) => {
     try {
       await localStorage.setItem("lang", lang);
