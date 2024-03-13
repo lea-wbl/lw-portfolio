@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import Brick from "../components/Brick";
 //import Luv from "../components/Luv";
 
