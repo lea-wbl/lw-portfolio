@@ -10,7 +10,11 @@ const Toggle = () => {
 
   return (
     <label className="switch">
-      <input type="checkbox" onChange={() => changeLang()} />
+      <input
+        type="checkbox"
+        checked={lang === "fr"}
+        onChange={() => changeLang()}
+      />
       <span className="slider"></span>
       <span className="labels" data-left="FR" data-right="EN"></span>
     </label>

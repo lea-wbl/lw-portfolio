@@ -1,4 +1,11 @@
-import { useState, useContext, createContext, FC, ReactNode } from "react";
+import {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  FC,
+  ReactNode,
+} from "react";
 
 interface ILanguageContext {
   lang: string;
@@ -31,6 +38,10 @@ export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
     const savedLang = localStorage.getItem("lang");
     savedLang && setLang(savedLang);
   };
+
+  useEffect(() => {
+    getLang();
+  }, []);
 
   // store lang ib local storage
   const storeLang = async (lang: string) => {
