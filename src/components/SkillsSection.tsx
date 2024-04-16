@@ -9,8 +9,12 @@ const SkillsSection = () => {
     const knobsPerRow = Math.floor(width / (2 * rem));
     const knobsPerColumn = Math.floor((height - 6 * rem) / (2 * rem));
     const totalKnobs = knobsPerRow * knobsPerColumn;
-    const centering = width / height / 4;
-    const paddingY = width < 450 ? 2 : Math.ceil(knobsPerColumn * centering);
+    const paddingY =
+      width < 450
+        ? 2
+        : width / height < 1
+        ? Math.ceil(knobsPerColumn / 4)
+        : Math.ceil(knobsPerColumn / 3);
     const paddingX = width < 575 ? 2 : width >= 575 && width < 1000 ? 4 : 3;
     const knobs: any = [];
 
